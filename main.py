@@ -1,3 +1,4 @@
+
 def main():
     print('RPG AMBIENCE BOARD is starting...')
 
