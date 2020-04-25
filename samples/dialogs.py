@@ -13,7 +13,7 @@ class MainWindow(QWidget):
         self.screenSize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
         self.windowScale = 0.5
 
-        self.setWindowIcon(QIcon('../icons/dragon_icon.png'))
+        self.setWindowIcon(QIcon('../gui/icons/dragon_icon.png'))
         self.setWindowTitle("RPG Ambiance Board")
 
         windowSize = self.screenSize[0] * self.windowScale, self.screenSize[1] * self.windowScale

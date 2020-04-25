@@ -1,5 +1,2 @@
 PyQt5==5.14.2
-pygame==1.9.6
-mutagen==1.44.0
-
 python-vlc==3.0.7110

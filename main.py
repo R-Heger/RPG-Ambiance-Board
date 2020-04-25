@@ -1,13 +1,15 @@
 import gettext
 import sys
+import compiled_resources
 
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import*
 from PyQt5.QtCore import *
 
-from gui.RPGABMainGUI import RPGABMainGUI
+from gui.RPGABMainWindow import RPGABMainWindow
 
 lang = 'en'
+appStyle = 'gui/stylesheets/dark_blue/style.qss'
 
 
 def main():
@@ -25,7 +27,9 @@ def main():
 
     # start the GUI
     app = QApplication(sys.argv)
-    main_window = RPGABMainGUI()
+    main_window = RPGABMainWindow()
+    with open(appStyle, 'r') as style:
+        main_window.setStyleSheet(style.read())
     sys.exit(app.exec_())
     # nothing will be executed from here
 

@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="dragon.png">gui/icons/dragon_icon.png</file>
+</qresource>
+</RCC>

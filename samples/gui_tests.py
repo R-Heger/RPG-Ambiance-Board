@@ -23,7 +23,7 @@ class Window(QWidget):
         button.clicked.connect(self.button_clicked)
         self.setGeometry(50, 50, 500, 500)
         self.setWindowTitle("RPG Ambience Board")
-        self.setWindowIcon(QIcon('../icons/dragon_icon.png'))
+        self.setWindowIcon(QIcon('../gui/icons/dragon_icon.png'))
 
         self.show()
 

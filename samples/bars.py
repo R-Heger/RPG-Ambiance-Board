@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         self.screenSize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
         self.windowScale = 0.75
 
-        self.setWindowIcon(QIcon('../icons/dragon_icon.png'))
+        self.setWindowIcon(QIcon('../gui/icons/dragon_icon.png'))
         self.setWindowTitle("RPG Ambiance Board")
 
         windowSize = self.screenSize[0] * self.windowScale, self.screenSize[1] * self.windowScale
@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
 
     def init(self):
         statusbar = self.statusBar().showMessage('This will become awesome!')
-        exitMe = QAction(QIcon('../icons/ab_icon.png'), _('&Exit'), self)
+        exitMe = QAction(QIcon('../gui/icons/ab_icon.png'), _('&Exit'), self)
         exitMe.setShortcut('Ctrl+E')
         exitMe.setStatusTip('Exit')
         exitMe.triggered.connect(self.close)

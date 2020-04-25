@@ -1,14 +1,15 @@
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import*
+from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 
-class SoundLibraryGui(QWidget):
+class SoundFxWidget(QWidget):
     def __init__(self):
         super().__init__()
 
-        box = QHBoxLayout()
+        box = QStackedLayout()
         frame = QFrame()
-        frame.setStyleSheet("QWidget {background-color: silver}")
+        frame.setStyleSheet("QWidget {background-color: #555}")
         box.addWidget(frame)
         self.setLayout(box)
+

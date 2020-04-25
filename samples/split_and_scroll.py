@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import*
 from PyQt5.QtCore import *
 
+
 class MainWindow(QTabWidget):
     def __init__(self):
         super().__init__()
@@ -13,7 +14,7 @@ class MainWindow(QTabWidget):
         self.screenSize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
         self.windowScale = 0.5
 
-        self.setWindowIcon(QIcon('../icons/dragon_icon.png'))
+        self.setWindowIcon(QIcon('../gui/icons/dragon_icon.png'))
         self.setWindowTitle("RPG Ambiance Board")
 
         windowSize = self.screenSize[0] * self.windowScale, self.screenSize[1] * self.windowScale
@@ -50,3 +51,8 @@ class MainWindow(QTabWidget):
             filesListLayout.addWidget(QLabel('very_long_file_' + str(i)))
 
         filesList.setWidget(filesListContent)
+
+
+app = QApplication(sys.argv)
+main_window = MainWindow()
+sys.exit(app.exec_())

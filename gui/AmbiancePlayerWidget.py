@@ -47,7 +47,7 @@ class AmbiancePlayerWidget(QWidget):
         volumeSlider.valueChanged.connect(self.adjustVolume)
         volumeSlider.setValue(defaultVolume)
 
-        self.setMaximumWidth(100)
+        # self.setMinimumWidth(100)
 
     def openFileDialog(self):
         dialog = QFileDialog()
