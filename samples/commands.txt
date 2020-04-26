@@ -3,3 +3,5 @@ pygettext.py -d base -o locales/main.pot rpg_ab_main.py
 
 msgfmt.py -o main.mo main.po
 
+pyrcc5 -o icon_rc.py icon.qrc
+

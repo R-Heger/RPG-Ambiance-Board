@@ -9,6 +9,6 @@ class SoundLibraryWidget(QWidget):
 
         box = QHBoxLayout()
         frame = QFrame()
-        frame.setStyleSheet("QWidget {background-color: silver}")
+        frame.setStyleSheet("QWidget {background-color: #555}")
         box.addWidget(frame)
         self.setLayout(box)

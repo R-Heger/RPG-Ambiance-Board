@@ -29,7 +29,7 @@ def main():
     app = QApplication(sys.argv)
     main_window = RPGABMainWindow()
     with open(appStyle, 'r') as style:
-        main_window.setStyleSheet(style.read())
+        app.setStyleSheet(style.read())
     sys.exit(app.exec_())
     # nothing will be executed from here
 

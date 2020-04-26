@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 
+
 QProgressBar:horizontal {
     border: 1px solid #3A3939;
     text-align: center;
@@ -950,7 +951,7 @@ QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
 
 QTreeView, QListView, QTextBrowser, AtLineEdit, AtLineEdit::hover {
     border: 1px solid #444;
-    background-color: silver;
+    background-color: #555;
     border-radius: 3px;
     margin-left: 3px;
     color: black;
@@ -1234,7 +1235,7 @@ QSplitter::handle:vertical {
 }
 
 QListWidget {
-    background-color: silver;
+    background-color: #555;
     border-radius: 5px;
     margin-left: 5px;
 }

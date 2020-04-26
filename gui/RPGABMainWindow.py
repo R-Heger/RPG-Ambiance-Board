@@ -8,7 +8,7 @@ from PyQt5.QtCore import *
 from gui.SoundBoardWidget import  SoundBoardWidget
 from gui.SoundLibraryWidget import  SoundLibraryWidget
 from gui.MainContentWidget import  MainContentWidget
-
+from gui.MasterWindow import MasterWindow
 
 
 class RPGABMainWindow(QMainWindow):
@@ -38,6 +38,8 @@ class RPGABMainWindow(QMainWindow):
         statusbar.showMessage(_('Ready for some epic adventures!'))
 
         menubarLeft = self.menuBar()
+        menubarRight = QMenuBar(menubarLeft)
+        menubarLeft.setCornerWidget(menubarRight, Qt.TopRightCorner)
 
         file = menubarLeft.addMenu(_('&File'))
         file.addAction(self.exitMain)
@@ -45,13 +47,23 @@ class RPGABMainWindow(QMainWindow):
         menubarLeft.addAction(self.mainContent.showBoard)
         menubarLeft.addAction(self.mainContent.showLibrary)
 
+        # Buildup Right Menubar
+        self.masterWindow = MasterWindow()
+        self.showMaster = QAction('-M-')
+        self.showMaster.setStatusTip(_('Set Master Volume'))
+        self.showMaster.triggered.connect(self.showMasterWidget)
+        menubarRight.addAction(self.showMaster)
+
+        # Toggle Fullscreen to the menubar
         self.setFullscreen = QAction('[  ]', self)
         self.setFullscreen.setStatusTip(_('Fullscreen'))
         self.setFullscreen.triggered.connect(self.toggleFullscreen)
 
-        menubarRight = QMenuBar(menubarLeft)
-        menubarLeft.setCornerWidget(menubarRight, Qt.TopRightCorner)
         menubarRight.addAction(self.setFullscreen)
+
+        font = QFont()
+        font.setPointSize(12)
+        self.setFont(font)
 
         self.show()
 
@@ -60,3 +72,8 @@ class RPGABMainWindow(QMainWindow):
             self.showNormal()
         else:
             self.showFullScreen()
+
+    def showMasterWidget(self):
+        self.masterWindow.showMe()
+
+

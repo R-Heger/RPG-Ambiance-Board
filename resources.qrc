@@ -1,5 +1,18 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
     <file alias="dragon.png">gui/icons/dragon_icon.png</file>
+    <file alias="play.png">gui/icons/play.png</file>
+    <file alias="pause.png">gui/icons/pause.png</file>
+    <file alias="stop.png">gui/icons/stop.png</file>
+    <file alias="next.png">gui/icons/next.png</file>
+    <file alias="prev.png">gui/icons/prev.png</file>
+    <file alias="options.png">gui/icons/options.png</file>
+    <file alias="loop.png">gui/icons/loop.png</file>
+    <file alias="loopOne.png">gui/icons/loopOne.png</file>
+    <file alias="loopRnd.png">gui/icons/loopRnd.png</file>
+    <file alias="loopSpace.png">gui/icons/loopSpace.png</file>
+    <file alias="rnd.png">gui/icons/rnd.png</file>
+    <file alias="plus.png">gui/icons/plus.png</file>
+    <file alias="minus.png">gui/icons/minus.png</file>
 </qresource>
 </RCC>

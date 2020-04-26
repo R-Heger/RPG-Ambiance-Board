@@ -19,7 +19,7 @@ class SoundBoardWidget(QSplitter):
 
         outerVSplitter = QSplitter(Qt.Vertical)
         self.addWidget(outerVSplitter)
-        self.setSizes([1, 4])
+        self.setSizes([100, 1000])
 
         soundFx = SoundFxWidget()
         mixerSplitter = QSplitter(Qt.Horizontal)
@@ -31,5 +31,5 @@ class SoundBoardWidget(QSplitter):
         ambiance = AmbianceWidget()
         mixerSplitter.addWidget(music)
         mixerSplitter.addWidget(ambiance)
-        mixerSplitter.setSizes([200, 800])
+        mixerSplitter.setSizes([150, 1200])
 

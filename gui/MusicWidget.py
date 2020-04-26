@@ -2,7 +2,9 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
-from gui.buttons import *
+from gui.Buttons import *
+from gui.TitleBarWidget import TitleBarWidget
+from gui.MasterWidget import MasterWidget
 
 
 class MusicWidget(QWidget):
@@ -10,50 +12,41 @@ class MusicWidget(QWidget):
         super().__init__()
 
         outerVBox = QVBoxLayout()
-        titleBar = QHBoxLayout()
-        titleBar.addWidget(QLabel(_('Music')))
-        titleBar.addStretch(1)
-        titleBar.addWidget(OptionsButton())
+        titleBar = TitleBarWidget(_('Music'), False)
 
-        outerVBox.addLayout(titleBar)
+        outerVBox.addWidget(titleBar)
         playerBox = QHBoxLayout()
         outerVBox.addLayout(playerBox)
 
         playlistBox = QVBoxLayout()
         playerBox.addLayout(playlistBox)
-        playlistScroll = QScrollArea()
-        playlistBox.addWidget(playlistScroll)
+        self.playlist = QListWidget()
+        playlistBox.addWidget(self.playlist)
 
         buttonBox = QHBoxLayout()
         buttonBox.addWidget(AddButton())
         buttonBox.addWidget(DelButton())
         playlistBox.addLayout(buttonBox)
 
-        playerControlBox = QVBoxLayout()
+        playerControlBox = QHBoxLayout()
         playerBox.addLayout(playerControlBox)
-        sliderBox = QHBoxLayout()
-        playerControlBox.addLayout(sliderBox)
-        self.musicVolumeSlider = QSlider()
-        sliderBox.addStretch(1)
-        sliderBox.addWidget(self.musicVolumeSlider)
-        sliderBox.addStretch(1)
+
+        self.master = MasterWidget()
+        playerControlBox.addWidget(self.master)
+
+        transportButtonBox = QVBoxLayout()
+        transportButtonBox.addWidget(PrevButton())
+        transportButtonBox.addWidget(StopButton())
+        transportButtonBox.addWidget(PlayToggleButton())
+        transportButtonBox.addWidget(NextButton())
+        transportButtonBox.addStretch(1)
+        transportButtonBox.addWidget(RndToggleButton())
+        transportButtonBox.addWidget(PlaylistLoopToggleButton())
+
+        playerControlBox.addLayout(transportButtonBox)
 
 
-        transportBox1 = QHBoxLayout()
-        playerControlBox.addLayout(transportBox1)
-        transportBox2 = QHBoxLayout()
-        playerControlBox.addLayout(transportBox2)
-        transportBox2.addWidget(PrevButton())
-        transportBox1.addWidget(StopButton())
-        transportBox1.addWidget(PlayToggleButton())
-        transportBox2.addWidget(NextButton())
-
-
-
-        rndBox = QHBoxLayout()
-        playerControlBox.addLayout(rndBox)
-        rndBox.addWidget(RndToggleButton())
-        rndBox.addWidget(LoopToggleButton())
+        self.playlist.addItems(['Track_' + str(i) for i in range(30)])
 
         self.setLayout(outerVBox)
 

@@ -8,12 +8,12 @@ class AudioPlayer:
     def __init__(self):
         self.instance = vlc.Instance()
         self.player = self.instance.media_player_new()
+        self.volume = defaultVolume
         self.media = None
 
     def setSound(self, filePath: str):
         self.media = self.instance.media_new(filePath)
         self.player.set_media(self.media)
-        self.setVolume(defaultVolume)
 
     def play(self):
         if self.media is None:
@@ -34,7 +34,5 @@ class AudioPlayer:
             self.player.stop()
 
     def setVolume(self, vol: int):
-        if self.media is None:
-            print('no sound loaded')
-        else:
-            self.player.audio_set_volume(vol)
+        self.volume = vol
+        self.player.audio_set_volume(self.volume)
