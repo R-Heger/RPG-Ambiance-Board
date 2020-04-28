@@ -7,6 +7,7 @@ from PyQt5.QtGui import*
 from PyQt5.QtCore import *
 
 from gui.RPGABMainWindow import RPGABMainWindow
+from application.RPGAmbianceBoard import RPGAmbianceBoard
 
 lang = 'en'
 appStyle = 'gui/stylesheets/dark_blue/style.qss'
@@ -25,6 +26,7 @@ def main():
         de.install()
         _ = de.gettext
 
+
     # start the GUI
     app = QApplication(sys.argv)
     main_window = RPGABMainWindow()
@@ -36,4 +38,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
