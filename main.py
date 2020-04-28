@@ -26,19 +26,14 @@ def main():
         de.install()
         _ = de.gettext
 
-    ambianceBoard = RPGAmbianceBoard()
-    test(ambianceBoard)
 
     # start the GUI
-    # app = QApplication(sys.argv)
-    # main_window = RPGABMainWindow()
-    # with open(appStyle, 'r') as style:
-    #     app.setStyleSheet(style.read())
-    # sys.exit(app.exec_())
+    app = QApplication(sys.argv)
+    main_window = RPGABMainWindow()
+    with open(appStyle, 'r') as style:
+        app.setStyleSheet(style.read())
+    sys.exit(app.exec_())
     # nothing will be executed from here
-
-def test(board):
-    pass
 
 
 if __name__ == "__main__":

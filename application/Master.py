@@ -11,15 +11,17 @@ DefaultSoundFxMasterVolume = 1.0
 class Master(VolumeControllable):
     def __init__(self, master=None, vol=DefaultMasterVolume):
         self.volume = vol
-        self.slaves = List[VolumeControllable]
+        self.slaves: List[VolumeControllable] = []
         self.master = master
 
     def setVolume(self, vol, calledByMaster=False):
         if not calledByMaster:
             self.volume = vol
-
-        for slave in self.slaves:
-            slave.setVolume(self.volume * vol, True)
+            for slave in self.slaves:
+                slave.setVolume(vol, True)
+        else:
+            for slave in self.slaves:
+                slave.setVolume(self.volume * vol, True)
 
     def getVolume(self, calledBySlave=False) -> float:
         if calledBySlave:

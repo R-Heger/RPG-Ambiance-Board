@@ -6,4 +6,9 @@ from application.Sound import Sound
 class SoundFx:
     def __init__(self, master: Master):
         self.fxMaster = Master(master, DefaultSoundFxMasterVolume)
-        self.soundFxs = List[AudioPlayer]
+        self.soundFxs: List[AudioPlayer] = []
+
+
+    def addSound(self):
+        # DENK DRAN DIE MASTER ZU VERBINDEN !
+        pass

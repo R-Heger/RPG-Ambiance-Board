@@ -8,7 +8,7 @@ from application.SoundLibrary import SoundLibrary
 
 class RPGAmbianceBoard:
     def __init__(self):
-        self.scenes = List[Scene]
+        self.scenes: List[Scene] = []
         self.library = SoundLibrary()
         self.master = Master()
 
@@ -21,3 +21,11 @@ class RPGAmbianceBoard:
         self.library = newBoard.library
         self.master = newBoard.master
 
+    def addScene(self, scene=None, name='') -> Scene:
+        if scene is None:
+            scene = Scene(self.master, name)
+            self.scenes.append(scene)
+        else:
+            self.scenes.append(scene)
+
+        return scene

@@ -5,7 +5,7 @@ from application.Sound import Sound
 
 class SoundLibrary:
     def __init__(self):
-        self.library = []
+        self.library: List[Sound] = []
 
     def addSound(self, filePath='', soundTypes=List[int], tags=List[str]):
         self.library.append(Sound(filePath, soundTypes, tags))
