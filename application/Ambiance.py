@@ -1,6 +1,9 @@
 from application.AudioPlayer import AudioPlayer
+from application.Master import *
+from application.Sound import Sound
 
 
 class Ambiance:
-    def __init__(self):
-        self.player = AudioPlayer()
+    def __init__(self, master: Master):
+        self.ambianceMaster = Master(master, DefaultAmbianceMasterVolume)
+        self.ambianceSounds = List[AudioPlayer]

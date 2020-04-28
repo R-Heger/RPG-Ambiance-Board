@@ -7,6 +7,6 @@ class VolumeControllable(ABC):
         pass
 
     @abstractmethod
-    def getVolume(self) -> float:
+    def getVolume(self, calledBySlave: bool) -> float:
         pass
 
