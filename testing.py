@@ -59,15 +59,36 @@ def masterVolTest(board):
     print('Volume test Done')
 
 
+def testSaveAndLoad(board):
+    print('add example Scene')
+    scene = board.addScene()
+    print('add Song to exampleScene')
+    song = Sound('music', path1, [0])
+    scene.music.addSong(song)
+    print('play Music')
+    scene.music.play()
+    time.sleep(5)
+    board.save('testSaves', 'test')
+    scene.music.removeSong(song)
+    scene.music.play()
+    board.load('testSaves/test.abs')
+    scene.music.play()
+    time.sleep(5)
+
+
 print('Starting tests...')
+
+ambianceBoard = RPGAmbianceBoard()
 
 # vlcTest()
 
 # audioTest()
 
-ambianceBoard = RPGAmbianceBoard()
-masterVolTest(ambianceBoard)
+# masterVolTest(ambianceBoard)
 
-# testing git
+
+testSaveAndLoad(ambianceBoard)
+
+
 
 

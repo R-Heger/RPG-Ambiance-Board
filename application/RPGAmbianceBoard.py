@@ -13,10 +13,10 @@ class RPGAmbianceBoard:
         self.master = Master()
 
     def save(self, filePath: str, fileName: str):
-        pickle.dump(self, filePath + fileName + '.abs', 'wb')
+        pickle.dump(self, open(filePath + '/' + fileName + '.abs', 'wb'))
 
     def load(self, filePath: str):
-        newBoard = pickle.load(filePath, 'rb')
+        newBoard = pickle.load(open(filePath, 'rb'))
         self.scenes = newBoard.scenes
         self.library = newBoard.library
         self.master = newBoard.master

@@ -16,6 +16,16 @@ class Music:
         if len(self.playlist) == 1:
             self.currSong = song
 
+    def removeSong(self, song: Sound):
+        self.playlist.remove(song)
+        if song == self.currSong:
+            # TODO
+            pass
+
+        if len(self.playlist) == 0:
+            self.currSong = None
+            self.player.stop()
+
     def play(self):
         if self.currSong:
             self.player.setSound(self.currSong.filePath)
